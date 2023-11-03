@@ -1,0 +1,29 @@
+<form [formGroup]="userForm">
+    <div class="row">
+        <div class="col-6">
+
+        <mat-form-field appearance="outline"class="w-100">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name" matInput>
+            <mat-error>
+                <span *ngIf="nameControl?.hasError ('minlength')">
+                 Requerido minimo 3 caracteres
+                </span>
+                <span *ngIf="nameControl?.hasError ('maxlength')">
+                    Requerido minimo 6 caracteres
+                   </span>
+            </mat-error>
+            <mat-hint>Debe contener al menos 4 letras </mat-hint>
+        </mat-form-field>
+
+        </div>
+        <div class="col-6">
+                    <mat-form-field appearance="outline"class="w-100">
+                <mat-label>Apelido</mat-label>
+                <input formControlName="lastName" matInput>
+                
+            </mat-form-field>
+    
+        </div>
+    </div>
+</form>
